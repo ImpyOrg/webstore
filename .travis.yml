@@ -1,7 +1,8 @@
 sudo: true
 
 language: node_js
-node_js: stable
+node_js:
+  - 6
 
 env:
   - CXX=g++-4.9 NODE_ENV=development
