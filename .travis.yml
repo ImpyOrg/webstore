@@ -1,12 +1,8 @@
-sudo: true
-
 language: node_js
 node_js:
-  - 6
+  - 5.11.0
 
 env:
-  - CXX=g++-4.9 NODE_ENV=development
+  - CXX=g++-4.8
 
-before_script:
-  - npm install -g eslint babel-eslint eslint-plugin-react
 script: "npm run travis"

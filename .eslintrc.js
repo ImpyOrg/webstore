@@ -6,6 +6,7 @@ const ERROR = 2;
 
 module.exports = {
   parser: 'babel-eslint',
+  root: true,
 
   plugins: [
     'react'
@@ -35,7 +36,7 @@ module.exports = {
     // equivalent to jshint boss
     'no-cond-assign': OFF,
     // equivalent to jshint devel
-    'no-console': OFF,
+    'no-console': ERROR,
     // prohibits things like `while (true)`
     'no-constant-condition': OFF,
     // we need to be able to match these
