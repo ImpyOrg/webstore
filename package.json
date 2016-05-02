@@ -23,6 +23,7 @@
     "babel-polyfill": "^6.7.4",
     "babel-register": "^6.7.2",
     "babel-runtime": "^6.6.1",
+    "classnames": "^2.2.4",
     "immutable": "^3.8.1",
     "lodash": "^4.11.1",
     "react": "^15.0.1",
