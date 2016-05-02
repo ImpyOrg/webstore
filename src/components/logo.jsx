@@ -1,6 +1,6 @@
 import React from 'react';
 
-const path = '/assets/pic/logo_main.png';
+const path = '/pic/logo_main.png';
 
 const Logo = () => {
   return (

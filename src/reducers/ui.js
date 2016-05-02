@@ -17,9 +17,19 @@ export default function reducer(state = initialState, action) {
     case a.OPEN_SIGNUP:
       state = state.setIn(['modals', 'signup'], true);
       break;
+    
     case a.CLOSE_SIGNUP:
       state = state.setIn(['modals', 'signup'], false);
       break;
+    
+    case a.OPEN_LOGIN:
+      state = state.setIn(['modals', 'login'], true);
+      break;
+    
+    case a.CLOSE_LOGIN:
+      state = state.setIn(['modals', 'login'], false);
+      break;
+
     case a.RESET_UI:
       state = initialState;
   }
