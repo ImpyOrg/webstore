@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
-import { initState } from './store/index';
+import configureStore from './store';
 import { getRoutes } from './routing';
 
-const store = initState();
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>

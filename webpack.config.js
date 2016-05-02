@@ -11,9 +11,10 @@ const PATHS = {
 };
 
 const common = {
-  entry: {
-    app: PATHS.app
-  },
+  entry: [
+    'webpack-hot-middleware/client',
+    PATHS.app
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -51,6 +52,7 @@ if (TARGET === 'start' || !TARGET) {
       port: process.env.PORT || 8000
     },
     plugins: [
+      new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.HotModuleReplacementPlugin()
     ]
   });

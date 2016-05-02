@@ -1,17 +1,24 @@
-import i from 'immutable';
-import { createStore } from 'redux';
-import { combineReducers } from 'redux-immutablejs';
+import thunk from 'redux-thunk';
+import invariant from 'redux-immutable-state-invariant';
+import { createStore, applyMiddleware, compose } from 'redux';
 
-export const reducer = combineReducers(i.Map({
+import reducer from '../reducers';
 
-}));
+const browserHasDevTools = (typeof window === 'object') && (typeof window.devToolsExtension !== 'undefined');
 
-const initialState = i.Map({
-  
-});
+export default function configureStore(state) {
+  const store = createStore(reducer, state, compose(
+    applyMiddleware(invariant(), thunk),
+    browserHasDevTools ? window.devToolsExtension() : f => f
+  ));
 
-let store;
-export function initState(state = initialState) {
-  store = createStore(reducer, i.fromJS(state));
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('../reducers', () => {
+      const nextReducer = require('../reducers');
+      store.replaceReducer(nextReducer);
+    });
+  }
+
   return store;
 }
