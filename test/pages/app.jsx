@@ -1,27 +1,33 @@
 import React from 'react';
 import {
-  renderIntoDocument,
-  isCompositeComponentWithType,
+  renderIntoDocument as render,
   findRenderedComponentWithType as findWithType,
   findRenderedDOMComponentWithClass as findWithClass
 } from 'react-addons-test-utils';
 import { expect } from 'chai';
+import { Provider } from 'react-redux';
 
+import configureStore from '../../src/store';
 import App from '../../src/pages/app';
 import Header from '../../src/components/header';
 
 describe('App', () => {
+  const store = configureStore();
 
   describe('raw:', () => {
-    const component = renderIntoDocument(<App />);
+    const component = render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
 
     it('can be rendered', () => {
       expect(component).to.be.ok;
     });
 
     it('renders with "App" type', () => {
-      const isValid = isCompositeComponentWithType(component, App);
-      expect(isValid).to.equal(true);
+      const app = findWithType(component, App);
+      expect(app).to.be.ok;
     });
 
     it('renders a DOM node with "page" class', () => {
@@ -40,8 +46,10 @@ describe('App', () => {
 
     it('renders this.props.children components', () => {
       const child = <div className="child">Child component content</div>;
-      const component = renderIntoDocument(
-        <App>{child}</App>
+      const component = render(
+        <Provider store={store}>
+          <App>{child}</App>
+        </Provider>
       );
 
       const renderedChild = findWithClass(component, 'child');

@@ -6,6 +6,10 @@ import { initialState } from '../../src/reducers/ui';
 
 export default function ui(reducer) {
   describe('ui reducer', () => {
+
+    it('exists', () => {
+      expect(reducer).to.be.a('function');
+    });
   
     it('resets ui after RESET_UI', () => {
       const state = fromJS({});
