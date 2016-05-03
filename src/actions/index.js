@@ -1,10 +1,10 @@
 // ui actions
-const RESET_UI = 'RESET_UI';
+export const RESET_UI = 'RESET_UI';
 
-const OPEN_SIGNUP = 'OPEN_SIGNUP';
-const CLOSE_SIGNUP = 'CLOSE_SIGNUP';
-const OPEN_LOGIN = 'OPEN_LOGIN';
-const CLOSE_LOGIN = 'CLOSE_LOGIN';
+export const OPEN_SIGNUP = 'OPEN_SIGNUP';
+export const CLOSE_SIGNUP = 'CLOSE_SIGNUP';
+export const OPEN_LOGIN = 'OPEN_LOGIN';
+export const CLOSE_LOGIN = 'CLOSE_LOGIN';
 
 export function resetUi() {
   return {

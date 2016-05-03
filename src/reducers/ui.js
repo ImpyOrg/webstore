@@ -2,14 +2,11 @@ import { Map } from 'immutable';
 
 import * as a from '../actions';
 
-const initialState = Map({
+export const initialState = Map({
   modals: Map({
     signup: false,
-    login: false,
-    payment: false,
-    delivery: false
-  }),
-  progress: false
+    login: false
+  })
 });
 
 export default function reducer(state = initialState, action) {

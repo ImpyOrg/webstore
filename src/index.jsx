@@ -5,10 +5,8 @@ import { Provider } from 'react-redux';
 
 import configureStore from './store';
 import { getRoutes } from './routing';
-import * as a from './actions';
 
 const store = configureStore();
-store.dispatch(a.resetUi());
 
 ReactDOM.render(
   <Provider store={store}>
