@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 
-import createSelector from '../../selectors';
+import { createSelector } from '../../selectors';
 import {
   openSignup, closeSignup,
   openLogin, closeLogin
@@ -8,7 +8,7 @@ import {
 
 export const inputSelector = createSelector(
   state => state.get('user'),
-  state => state.getIn(['ui', 'modals']),
+  state => state.getIn(['ui', 'modals']).toJS(),
   (user, modals) => ({ user, modals })
 );
 

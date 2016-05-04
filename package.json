@@ -1,6 +1,6 @@
 {
   "name": "webstore",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node.js based websore built using React and Redux",
   "repository": {
     "type": "git",

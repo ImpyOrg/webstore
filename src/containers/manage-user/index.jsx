@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import selectors from './selectors';
 import Button from '../../components/button';
+import Modal from '../../components/modal';
 
 export class ManageUser extends React.Component {
   static displayName = 'ManageUser';
@@ -17,7 +18,8 @@ export class ManageUser extends React.Component {
 
   render() {
     const {
-      actions
+      actions,
+      modals
     } = this.props;
 
     return (
@@ -28,6 +30,8 @@ export class ManageUser extends React.Component {
         <Button className="link" onClick={actions.openSignup}>
           Sign up  
         </Button>
+        <Modal visible={modals.signup} onHide={actions.closeSignup}>Sign up modal content</Modal>
+        <Modal visible={modals.login} onHide={actions.closeLogin}>Login modal content</Modal>
       </div>
     );
   }
