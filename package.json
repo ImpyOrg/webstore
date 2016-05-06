@@ -9,9 +9,9 @@
   "main": "src/index.jsx",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
+    "test": "mocha",
     "lint": "node node_modules/.bin/eslint '+(src|test)/**'",
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
+    "coverage": "babel-node ./node_modules/istanbul/lib/cli cover --include-all-sources _mocha -- -R spec",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "travis": "npm run lint && npm run coverage && npm run coveralls"
   },
