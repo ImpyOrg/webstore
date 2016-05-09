@@ -10,26 +10,27 @@ export const initialState = Map({
 });
 
 export default function reducer(state = initialState, action) {
+  let nextState = state;
   switch (action.type) {
     case a.OPEN_SIGNUP:
-      state = state.setIn(['modals', 'signup'], true);
+      nextState = state.setIn(['modals', 'signup'], true);
       break;
-    
+
     case a.CLOSE_SIGNUP:
-      state = state.setIn(['modals', 'signup'], false);
+      nextState = state.setIn(['modals', 'signup'], false);
       break;
-    
+
     case a.OPEN_LOGIN:
-      state = state.setIn(['modals', 'login'], true);
+      nextState = state.setIn(['modals', 'login'], true);
       break;
-    
+
     case a.CLOSE_LOGIN:
-      state = state.setIn(['modals', 'login'], false);
+      nextState = state.setIn(['modals', 'login'], false);
       break;
 
     case a.RESET_UI:
-      state = initialState;
+      nextState = initialState;
   }
 
-  return state;
+  return nextState;
 }

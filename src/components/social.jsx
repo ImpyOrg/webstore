@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const links = {
   vk: { url: 'https://vk.com/impyorg', title: 'font__fa-vk' },
@@ -6,23 +6,21 @@ const links = {
   inst: { url: 'https://vk.com/impyorg', title: 'font__fa-inst' }
 };
 
-export default class Social extends React.Component {
-  static displayName = 'Social';
+const Social = ({ entries }) => (
+  <div className="social">
+    <ul className="social__list">
+      {
+        entries.map((v, i) => {
+          const className = `social__link ${links[v].title}`;
+          return <a className={className} href={links[v].url} key={i}></a>;
+        })
+      }
+    </ul>
+  </div>
+);
 
-  render() {
-    const { entries } = this.props;
+Social.propTypes = {
+  entries: PropTypes.arrayOf(PropTypes.string).isRequired
+};
 
-    return (
-      <div className="social">
-        <ul className="social__list">
-          {
-            entries.map((v, i) => {
-              const className = `social__link ${links[v].title}`;
-              return <a key={v} href={links[v].url} className={className}></a>;
-            })
-          }
-        </ul>
-      </div>
-    );
-  }
-}
+export default Social;

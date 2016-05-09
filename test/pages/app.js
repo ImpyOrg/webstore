@@ -39,11 +39,9 @@ describe('App', () => {
       const header = findWithType(component, Header);
       expect(header).to.be.ok;
     });
-
   });
 
   describe('with children:', () => {
-
     it('renders this.props.children components', () => {
       const child = <div className="child">Child component content</div>;
       const component = render(
@@ -56,7 +54,5 @@ describe('App', () => {
       expect(renderedChild).to.be.ok;
       expect(renderedChild.textContent).to.equal('Child component content');
     });
-
   });
-
 });

@@ -13,7 +13,7 @@ export const inputSelector = createSelector(
 );
 
 export const outputSelector = (dispatch) => ({
-  actions: { ...bindActionCreators({openSignup, closeSignup, openLogin, closeLogin}, dispatch) }
+  actions: { ...bindActionCreators({ openSignup, closeSignup, openLogin, closeLogin }, dispatch) }
 });
 
 const selectors = [
