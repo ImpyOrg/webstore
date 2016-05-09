@@ -4,9 +4,7 @@ import { expect } from 'chai';
 import { defaultSelector } from '../../src/selectors';
 
 describe('Selectors:', () => {
-
   describe('defaultSelector()', () => {
-
     it('returns vanilla JS equivalent of immutable state', () => {
       const state = fromJS({
         rootMap: {
@@ -20,7 +18,5 @@ describe('Selectors:', () => {
 
       expect(selectedState).to.deep.equal(state.toJS());
     });
-
   });
-
 });

@@ -7,7 +7,7 @@ import Home from './pages/home';
 export function getRoutes() {
   return (
     <Route component={App}>
-      <Route path="/" component={Home} />
+      <Route component={Home} path="/" />
     </Route>
   );
 }

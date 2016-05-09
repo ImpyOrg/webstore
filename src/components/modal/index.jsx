@@ -6,9 +6,9 @@ class Modal extends React.Component {
   static displayName = 'Modal';
 
   static propTypes = {
-    title: PropTypes.any,
-    visible: PropTypes.bool,
-    onHide: PropTypes.func
+    onHide: PropTypes.func,
+    title: PropTypes.node,
+    visible: PropTypes.bool
   };
 
   componentDidMount() {

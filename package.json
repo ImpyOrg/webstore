@@ -53,6 +53,7 @@
     "css-loader": "^0.23.1",
     "dirty-chai": "^1.2.2",
     "eslint": "^2.9.0",
+    "eslint-plugin-immutable": "^1.0.0",
     "eslint-plugin-mocha": "^2.2.0",
     "eslint-plugin-react": "^5.0.1",
     "istanbul": "^1.0.0-alpha.2",

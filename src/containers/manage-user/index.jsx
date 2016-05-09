@@ -25,10 +25,10 @@ export class ManageUser extends React.Component {
     return (
       <div className="manage_user">
         <Button className="link" onClick={actions.openLogin}>
-          Log in  
+          Log in
         </Button>
         <Button className="link" onClick={actions.openSignup}>
-          Sign up  
+          Sign up
         </Button>
         <Modal visible={modals.signup} onHide={actions.closeSignup}>Sign up modal content</Modal>
         <Modal visible={modals.login} onHide={actions.closeLogin}>Login modal content</Modal>

@@ -5,7 +5,7 @@ import Sidebar from '../components/sidebar';
 
 export default class Home extends React.Component {
   static displayName = 'Home';
-  
+
   render() {
     return (
       <div>
