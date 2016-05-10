@@ -14,6 +14,8 @@ const PATHS = {
 const common = {
   entry: [
     'webpack/hot/only-dev-server',
+    'babel-core/register',
+    'babel-polyfill',
     PATHS.app,
     PATHS.style
   ],
@@ -37,7 +39,7 @@ const common = {
         exclude: /node_modules/
       }
     ]
-  },
+  }
 };
 
 if (TARGET === 'start' || !TARGET) {

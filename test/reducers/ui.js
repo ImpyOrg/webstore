@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 import { expect } from 'chai';
 
-import * as a from '../../src/actions';
+import { ui as a } from '../../src/actions';
 import { initialState } from '../../src/reducers/ui';
 
 export default function ui(reducer) {

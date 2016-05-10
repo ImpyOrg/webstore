@@ -1,37 +1,16 @@
-// ui actions
-export const RESET_UI = 'RESET_UI';
+import * as _messages from './messages';
+import * as _ui from './ui';
+import * as _user from './user';
+import * as _current_user from './current_user';
 
-export const OPEN_SIGNUP = 'OPEN_SIGNUP';
-export const CLOSE_SIGNUP = 'CLOSE_SIGNUP';
-export const OPEN_LOGIN = 'OPEN_LOGIN';
-export const CLOSE_LOGIN = 'CLOSE_LOGIN';
+export const messages = _messages;
+export const ui = _ui;
+export const user = _user;
+export const current_user = _current_user;
 
-export function resetUi() {
-  return {
-    type: RESET_UI
-  };
-}
-
-export function openSignup() {
-  return {
-    type: OPEN_SIGNUP
-  };
-}
-
-export function closeSignup() {
-  return {
-    type: CLOSE_SIGNUP
-  };
-}
-
-export function openLogin() {
-  return {
-    type: OPEN_LOGIN
-  };
-}
-
-export function closeLogin() {
-  return {
-    type: CLOSE_LOGIN
-  };
-}
+export default {
+  ...messages,
+  ...ui,
+  ...user,
+  ...current_user
+};

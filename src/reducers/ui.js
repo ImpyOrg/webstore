@@ -1,6 +1,6 @@
 import { Map } from 'immutable';
 
-import * as a from '../actions';
+import * as a from '../actions/ui';
 
 export const initialState = Map({
   modals: Map({
