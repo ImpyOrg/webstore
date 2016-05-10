@@ -4,7 +4,7 @@ import { createSelector } from '../../selectors';
 import {
   openSignup, closeSignup,
   openLogin, closeLogin
-} from '../../actions';
+} from '../../actions/ui';
 
 export const inputSelector = createSelector(
   state => state.get('user'),

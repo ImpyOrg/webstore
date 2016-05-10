@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import selectors from './selectors';
+import Signup from '../signup';
 import Button from '../../components/button';
 import Modal from '../../components/modal';
 
@@ -30,7 +31,9 @@ export class ManageUser extends React.Component {
         <Button className="link" onClick={actions.openSignup}>
           Sign up
         </Button>
-        <Modal visible={modals.signup} onHide={actions.closeSignup}>Sign up modal content</Modal>
+        <Modal visible={modals.signup} onHide={actions.closeSignup}>
+          <Signup />
+        </Modal>
         <Modal visible={modals.login} onHide={actions.closeLogin}>Login modal content</Modal>
       </div>
     );

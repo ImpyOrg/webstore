@@ -1,0 +1,51 @@
+.input {
+  position: relative;
+  width: 182px;
+  
+  &--error {
+
+    .input__field {
+      border-left: 3px solid #e84848;
+
+      + .input__message {
+        color: #e84848;
+      }
+    }
+
+    &:after {
+      font-family: FontAwesome;
+      content: "\f00d";
+      position: absolute;
+      right: 5px;
+      top: 4px;
+      color: #e84848;
+      font-size: 16px;
+    }
+  }
+
+  &__field {
+
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    height: 25px;
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    outline: 0;
+
+    font-family: Lato;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+
+    &:focus {
+      border-left: 3px solid #7fceb1;
+    }
+
+  }
+
+  &__message {
+    font-size: 10px;
+  }
+}
