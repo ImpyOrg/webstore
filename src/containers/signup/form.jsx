@@ -2,11 +2,7 @@ import React, { PropTypes } from 'react';
 import { form, from } from 'react-inform';
 
 import Button from '../../components/button';
-//import Message from './message';
-
-const Message = ({ message }) => (
-  <div>{message}</div>
-);
+import Input from '../../components/input';
 
 @form(from({
   firstname: {
@@ -73,31 +69,19 @@ export default class SignupForm extends React.Component {
       <form onSubmit={this.submitHandler}>
 
         <div className="layout__row">
-          <input id="firstname" placeholder="Your name" type="text" {...fields.firstname} />
-          {fields.firstname.error &&
-            <Message message={fields.firstname.error} type="error" />
-          }
+          <Input className="" id="firstname" placeholder="Your name" type="text" {...fields.firstname} />
         </div>
 
         <div className="layout__row">
-          <input id="lastname" placeholder="Your last name" type="text" {...fields.lastname} />
-          {fields.lastname.error &&
-            <Message message={fields.lastname.error} type="error" />
-          }
+          <Input className="" id="lastname" placeholder="Your last name" type="text" {...fields.lastname} />
         </div>
 
         <div className="layout__row">
-          <input id="email" placeholder="Email address" type="email" {...fields.email} />
-          {fields.email.error &&
-            <Message message={fields.email.error} type="error" />
-          }
+          <Input className="" id="email" placeholder="Email address" type="email" {...fields.email} />
         </div>
 
         <div className="layout__row">
-          <input id="password" placeholder="Password" type="password" {...fields.password} />
-          {fields.password.error &&
-            <Message message={fields.password.error} type="error" />
-          }
+          <Input className="" id="password" placeholder="Password" type="password" {...fields.password} />
         </div>
 
         <div className="layout__row">
